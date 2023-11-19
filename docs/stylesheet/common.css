@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "RobotoLocal";
+  src: url("../fonts/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RobotoLocal";
+  src: url("../fonts/Roboto-Bold.ttf");
+  font-weight: bold;
+  font-style: bold;
+}
+
+body {
+  font-family: "RobotoLocal";
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo {
+  width: 35px;
+}
+
+.logo__image {
+  width: 100%;
+  height: auto;
+}
+
+.hamburger {
+  height: 60px;
+  width: 60px;
+  background-color: blueviolet;
+  position: relative;
+}
+
+.hamburger__line {
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  /* (.hamburgerの高さ - .hamburger__lineの高さ) / 2  */
+  top: calc((60px - 2px) / 2);
+  /* (.hamburgerの幅 - .hamburger__lineの幅) / 2  */
+  left: calc((60px - 30px) / 2);
+  margin: auto;
+}
+
+.hamburger__line:before,
+.hamburger__line:after {
+  content: "";
+  /* .hamburger__lineが親要素のため起点となる */
+  position: absolute;
+  background-color: white;
+  width: 30px;
+  height: 2px;
+}
+
+.hamburger__line:before {
+  top: -10px;
+}
+
+.hamburger__line:after {
+  bottom: -10px;
+}
+
+.global-nav {
+  display: none;
+}
+
+.global-nav__list {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.global-nav__item:first-child {
+  margin-left: 0;
+}
+
+.global-nav__item {
+  text-transform: capitalize;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.global-nav__item--current {
+  border-bottom: 2px solid blueviolet;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 0 20px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+  .global-nav {
+    display: block;
+  }
+}
+
+/* footer */
+.footer {
+  background-color: #333;
+  padding: 0 20px;
+}
+
+.site-nav__item a {
+  display: block;
+  text-transform: capitalize;
+  font-size: 20px;
+  color: white;
+  border-bottom: 1px solid gray;
+  padding: 20px 0;
+}
+
+.site-nav__item:first-child {
+  margin-top: 0;
+}
+
+.copyright {
+  padding: 40px 0;
+  font-size: 16px;
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .site-nav {
+    display: flex;
+    flex-direction: row;
+    border-right: 1px solid gray;
+  }
+
+  .site-nav__item a {
+    margin-top: 0;
+    padding: 0 20px;
+    border-bottom: 0;
+    border-left: 1px solid gray;
+  }
+
+  .copyright {
+    margin-top: 0;
+  }
+}
